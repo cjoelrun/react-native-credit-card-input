@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/sbycrosz/react-native-credit-card-input#readme",
   "dependencies": {
+    "prop-types": "^15.6.0",
     "card-validator": "^3.0.0",
     "react-native-flip-card": "adahealth/react-native-flip-card#dddd0c103240f3cebda036729d37f5532dcc71fb",
     "lodash.compact": "^3.0.1",
