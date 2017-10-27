@@ -1,7 +1,9 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import ReactNative, {
   NativeModules,
   View,
+  ViewPropTypes,
   Text,
   StyleSheet,
   ScrollView,
@@ -48,7 +50,7 @@ export default class CreditCardInput extends Component {
 
     labelStyle: Text.propTypes.style,
     inputStyle: Text.propTypes.style,
-    inputContainerStyle: View.propTypes.style,
+    inputContainerStyle: ViewPropTypes.style,
 
     validColor: PropTypes.string,
     invalidColor: PropTypes.string,
@@ -174,6 +176,9 @@ export default class CreditCardInput extends Component {
             <CCInput {...this._inputProps("cvc")}
                 keyboardType="numeric"
                 containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]} /> }
+          { requiresPostalCode &&
+            <CCInput {...this._inputProps("postalCode")}
+                containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
           { requiresName &&
             <CCInput {...this._inputProps("name")}
                 containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]} /> }
